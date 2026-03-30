@@ -1,5 +1,5 @@
 export const verifyPayment = async (reference) => {
-  const res = await fetch("https://afridigital-fmdash.onrender.com/api/paystack/verify", {
+  const res = await fetch("https://afridigital-hub.onrender.com/api/paystack/verify", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

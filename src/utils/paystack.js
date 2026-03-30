@@ -1,5 +1,5 @@
 export const initializePayment = async (email, amount) => {
-  const res = await fetch("https://afridigital-fmdash.onrender.com/api/paystack/initialize", {
+  const res = await fetch("https://afridigital-hub.onrender.com/api/paystack/initialize", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

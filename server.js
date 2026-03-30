@@ -1,21 +1,23 @@
 import express from 'express';
+import mongoose from 'mongoose';
+import authRoutes from './routes/auth.js';
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// Connect to MongoDB first
+const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/afridigital';
+mongoose.connect(MONGO_URI)
+  .then(() => console.log('✅ MongoDB connected'))
+  .catch(err => console.error('❌ MongoDB connection error:', err));
+
 app.use(express.json());
+
+// Auth routes
+app.use('/api/auth', authRoutes);
 
 // Health route
 app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
-
-// Auth login route
-app.post('/api/auth/login', (req, res) => {
-  const { email, password } = req.body;
-  if (email && password) {
-    res.json({ token: 'demo-token', email });
-  } else {
-    res.status(400).json({ error: 'Email and password required' });
-  }
-});
 
 // Wallet route
 app.get('/api/wallet', (req, res) => res.json({ balance: 100 }));
