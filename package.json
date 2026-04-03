@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "cd ../afridigital-frontend && npm install && npm run build && rm -rf ../afridigital-backend/public/* && cp -r dist/* ../afridigital-backend/public/",
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "node server.js"
