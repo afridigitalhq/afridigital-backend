@@ -2,6 +2,11 @@
   "name": "afridigital-backend",
   "version": "0.0.0",
   "type": "module",
-  "scripts": { "start": "node start-server.mjs" },
-  "dependencies": { "express": "^4.18.2" }
+  "scripts": {
+    "start": "node start-server.mjs"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.2"
+  }
 }
