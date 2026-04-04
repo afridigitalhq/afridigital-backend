@@ -1,43 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AfriDigital Ultra</title>
-  <script type="module" crossorigin src="./assets/index-Dswylw-P.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-60KmLQMF.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" crossorigin src="./assets/index-BILDqida.js"></script>
 </head>
-<body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
+<body>
 
-  <!-- Hero Section -->
-  <section class="hero-container" id="hero">
-    <h1 class="hero-title">Welcome to AfriDigital Ultra</h1>
-    <p class="hero-subtitle">Your Cyber Watchdog & DevOps Monitoring Hub</p>
-  </section>
-
-  <!-- Services Section -->
-  <section class="services-grid" id="services">
-    <div class="service-card">Service 1</div>
-    <div class="service-card">Service 2</div>
-    <div class="service-card">Service 3</div>
-  </section>
-
-  <!-- Auth Buttons -->
-  <div class="auth-buttons">
-    <button id="loginBtn">Login</button>
-    <button id="registerBtn">Register</button>
+<section class="bg-blue-700 text-white text-center py-16">
+  <h1 class="text-4xl font-bold mb-4">Welcome to AfriDigital</h1>
+  <p class="text-lg">Your Command Center for Cybersecurity & DevOps Monitoring</p>
+</section>
+<section class="bg-black text-green-400 py-2 text-center">
+  <p id="marquee-text">Loading system status...</p>
+</section>
+<section class="flex justify-center py-10 bg-gray-100">
+  <div class="bg-white shadow-xl rounded-2xl p-8 text-center">
+    <h2 class="text-2xl font-bold mb-4">Get Started</h2>
+    <div class="flex gap-4 justify-center">
+      <a href="/login" class="bg-blue-600 text-white px-6 py-2 rounded">Login</a>
+      <a href="/register" class="bg-gray-300 px-6 py-2 rounded">Register</a>
+    </div>
   </div>
-
-  <!-- Chat Widget -->
-  <div class="chat-widget" id="chat-widget">
-    <p>Chat with us!</p>
+</section>
+<section class="py-12 text-center">
+  <h2 class="text-3xl font-bold mb-8">Our Services</h2>
+  <div class="space-y-6 px-4">
+    <div class="bg-white shadow p-6 rounded">
+      <h3 class="text-xl font-semibold">Cyber Threat Monitoring</h3>
+      <p>Detect and respond to threats in real-time.</p>
+    </div>
+    <div class="bg-white shadow p-6 rounded">
+      <h3 class="text-xl font-semibold">DevOps Pipeline Monitoring</h3>
+      <p>Track deployments and server health 24/7.</p>
+    </div>
   </div>
+</section>
+<footer class="bg-gray-800 text-white text-center py-4">
+  <p>© AfriDigital</p>
+</footer>
+<button onclick="toggleChat()" class="fixed bottom-4 right-4 bg-blue-600 text-white p-4 rounded-full shadow-lg">💬</button>
 
-  <!-- Footer -->
-  <footer class="footer">
-    &copy; 2026 AfriDigital Ultra. All rights reserved
-  </footer>
+<div id="chat-box" class="hidden fixed bottom-20 right-4 bg-white shadow-lg p-4 w-64">
+  <div id="chat-messages" class="h-40 overflow-y-auto mb-2"></div>
+  <input id="chat-input" class="border w-full p-1" placeholder="Type..." />
+  <button onclick="sendMessage()" class="bg-blue-600 text-white w-full mt-2">Send</button>
+</div>
 
-  <!-- Main JS -->
+
+
+
+<div id="version-marker" style="position:fixed;bottom:10px;right:10px;background:rgba(0,0,0,0.6);color:#fff;padding:4px 8px;font-size:12px;border-radius:4px;z-index:9999;">Serving version: 1775290052</div>
+<script id="version-flash">const vm=document.getElementById("version-marker");vm.style.transition="background 0.5s";vm.style.background="yellow";setTimeout(()=>vm.style.background="rgba(0,0,0,0.6)",500);</script>
 </body>
 </html>
