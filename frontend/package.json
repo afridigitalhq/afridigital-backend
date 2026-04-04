@@ -1,5 +1,7 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
-  "private": true
+  "name": "afridigital-frontend",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": { "build": "vite build" },
+  "devDependencies": { "vite": "^8.0.3" }
 }
