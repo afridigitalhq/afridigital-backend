@@ -2,6 +2,11 @@
   "name": "afridigital-frontend",
   "version": "0.0.1",
   "type": "module",
-  "scripts": { "build": "vite build" },
-  "devDependencies": { "vite": "^8.0.3" }
+  "scripts": {
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0",
+    "vite": "^8.0.3"
+  }
 }
