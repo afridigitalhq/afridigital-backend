@@ -1,0 +1,14 @@
+/* QuickEdit CSS */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+  background: #f0f4f8;
+}
+.hero-content h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+.hero-content p { font-size: 1.25rem; margin-bottom: 2rem; }
+.hero-buttons .btn { padding: 0.75rem 1.5rem; margin-right: 1rem; text-decoration: none; border-radius: 0.5rem; font-weight: 600; }
+.btn-primary { background: #4f46e5; color: #fff; }
+.btn-secondary { background: #e5e7eb; color: #111; }
+.hero-image img { max-width: 400px; height: auto; }
