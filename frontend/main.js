@@ -17,7 +17,7 @@ if (!window.__APP_LOADED__) {
     try {
       const htmlParts = await Promise.all(
         sections.map(section =>
-          fetch(`./sections/${section}.html`).then(res => res.text())
+          fetch(`/sections/${section}.html`).then(res => res.text())
         )
       );
 
