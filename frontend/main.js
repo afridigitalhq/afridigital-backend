@@ -9,18 +9,26 @@ const sections = [
   "chat-widget"
 ];
 
-async function loadSections() {
-  app.innerHTML = "";
+// Prevent multiple execution
+let loaded = false;
 
-  for (const section of sections) {
-    try {
-      const res = await fetch(`./sections/${section}.html`);
-      const html = await res.text();
-      app.innerHTML += html;
-    } catch (err) {
-      console.error("Failed to load:", section);
-    }
+async function loadSections() {
+  if (loaded) return;
+  loaded = true;
+
+  try {
+    const htmlParts = await Promise.all(
+      sections.map(section =>
+        fetch(`./sections/${section}.html`).then(res => res.text())
+      )
+    );
+
+    // 🔥 Replace content ONCE (not append in loop)
+    app.innerHTML = htmlParts.join("\n");
+
+  } catch (err) {
+    console.error("Error loading sections:", err);
   }
 }
 
-loadSections();
+document.addEventListener("DOMContentLoaded", loadSections);
