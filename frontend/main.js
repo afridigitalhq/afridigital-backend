@@ -1,15 +1,6 @@
 const app = document.getElementById("app");
+const sections = ["hero","marquee","auth","services","footer","chat-widget"];
 
-const sections = [
-  "hero",
-  "marquee",
-  "auth",
-  "services",
-  "footer",
-  "chat-widget"
-];
-
-// 🔒 Absolute single execution guard
 if (!window.__APP_LOADED__) {
   window.__APP_LOADED__ = true;
 
@@ -20,11 +11,10 @@ if (!window.__APP_LOADED__) {
           fetch(`/sections/${section}.html`).then(res => res.text())
         )
       );
-
       app.innerHTML = htmlParts.join("\n");
-
-    } catch (err) {
-      console.error("Error loading sections:", err);
+      console.log("🔥 Sections loaded");
+    } catch(e) {
+      console.error("❌ Error loading sections:", e);
     }
   }
 
