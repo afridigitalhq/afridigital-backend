@@ -9,26 +9,24 @@ const sections = [
   "chat-widget"
 ];
 
-// Prevent multiple execution
-let loaded = false;
+// 🔒 Absolute single execution guard
+if (!window.__APP_LOADED__) {
+  window.__APP_LOADED__ = true;
 
-async function loadSections() {
-  if (loaded) return;
-  loaded = true;
+  async function loadSections() {
+    try {
+      const htmlParts = await Promise.all(
+        sections.map(section =>
+          fetch(`./sections/${section}.html`).then(res => res.text())
+        )
+      );
 
-  try {
-    const htmlParts = await Promise.all(
-      sections.map(section =>
-        fetch(`./sections/${section}.html`).then(res => res.text())
-      )
-    );
+      app.innerHTML = htmlParts.join("\n");
 
-    // 🔥 Replace content ONCE (not append in loop)
-    app.innerHTML = htmlParts.join("\n");
-
-  } catch (err) {
-    console.error("Error loading sections:", err);
+    } catch (err) {
+      console.error("Error loading sections:", err);
+    }
   }
-}
 
-document.addEventListener("DOMContentLoaded", loadSections);
+  loadSections();
+}
