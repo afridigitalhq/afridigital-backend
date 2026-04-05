@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../frontend/main.js"],
-  "sourcesContent": ["const app = document.getElementById(\"app\");\nconst sections = [\"hero\",\"marquee\",\"auth\",\"services\",\"footer\",\"chat-widget\"];\n\nif (!window.__APP_LOADED__) {\n  window.__APP_LOADED__ = true;\n\n  async function loadSections() {\n    try {\n      const htmlParts = await Promise.all(\n        sections.map(section =>\n          fetch(`/sections/${section}.html`).then(res => res.text())\n        )\n      );\n      app.innerHTML = htmlParts.join(\"\\n\");\n      console.log(\"\uD83D\uDD25 Sections loaded\");\n    } catch(e) {\n      console.error(\"\u274C Error loading sections:\", e);\n    }\n  }\n\n  loadSections();\n}\n"],
-  "mappings": "MAAA,IAAMA,EAAM,SAAS,eAAe,KAAK,EACnCC,EAAW,CAAC,OAAO,UAAU,OAAO,WAAW,SAAS,aAAa,EAE3E,GAAI,CAAC,OAAO,eAAgB,CAC1B,OAAO,eAAiB,GAExB,eAAeC,GAAe,CAC5B,GAAI,CACF,IAAMC,EAAY,MAAM,QAAQ,IAC9BF,EAAS,IAAIG,GACX,MAAM,aAAaA,CAAO,OAAO,EAAE,KAAKC,GAAOA,EAAI,KAAK,CAAC,CAC3D,CACF,EACAL,EAAI,UAAYG,EAAU,KAAK;AAAA,CAAI,EACnC,QAAQ,IAAI,2BAAoB,CAClC,OAAQ,EAAG,CACT,QAAQ,MAAM,iCAA6B,CAAC,CAC9C,CACF,CAEAD,EAAa,CACf",
-  "names": ["app", "sections", "loadSections", "htmlParts", "section", "res"]
-}
